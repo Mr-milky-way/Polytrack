@@ -1,0 +1,1 @@
+xargs -P 10 -I {} bash -c 'url="{}"; path="${url#*//}"; path="${path#*/}"; dir=$(dirname "$path"); mkdir -p "$dir"; curl -s -o "$path" "$url"' < urls.txt
